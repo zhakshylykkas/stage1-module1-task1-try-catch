@@ -1,5 +1,6 @@
 package com.epam.m1.exceptions;
 
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -25,13 +26,12 @@ public class ParseIntegers {
             try {
                 int number = Integer.parseInt(next);
                 sum += number;
+            } catch (NumberFormatException nfe) {
                 justWords = WORDS.stream().collect(Collectors.joining(" "));
-            } catch (IllegalArgumentException iae) {
-                continue;
             }
         }
         System.out.println("Sum is " + sum);
-        System.out.println("Just words:" + justWords);
+        System.out.println("Just words: " + justWords);
     }
 }
 
