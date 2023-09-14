@@ -27,7 +27,7 @@ public class ParseIntegers {
                 int number = Integer.parseInt(next);
                 sum += number;
             } catch (NumberFormatException nfe) {
-                justWords = WORDS.stream().collect(Collectors.joining(" "));
+                justWords += next + " ";
             }
         }
         System.out.println("Sum is " + sum);
